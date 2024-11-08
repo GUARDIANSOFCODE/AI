@@ -1,0 +1,16 @@
+import openai
+
+openai.api_key = "YOUR_OPENAI_API_KEY"
+
+prompt = "Write a poem about a lonely robot exploring a distant planet."
+
+response = openai.Completion.create(
+  engine="text-davinci-003",
+  prompt=prompt,
+  max_tokens=100,
+  n=1,
+  stop=None,
+  temperature=0.5,
+)
+
+print(response.choices[0].text.strip())
